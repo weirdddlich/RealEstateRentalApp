@@ -1,0 +1,73 @@
+<Window x:Class="RealEstateRental.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Вход и регистрация"
+        Height="440"
+        Width="460"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <TabControl x:Name="MainTabs" Margin="16">
+        <TabItem Header="Вход">
+            <Grid Margin="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Управление арендой" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,14"/>
+
+                <TextBlock Grid.Row="1" Text="Имя пользователя"/>
+                <TextBox x:Name="UsernameBox" Grid.Row="2" Margin="0,4,0,10"/>
+
+                <TextBlock Grid.Row="3" Text="Пароль"/>
+                <PasswordBox x:Name="PasswordBox" Grid.Row="4" Margin="0,4,0,0" Height="28"/>
+
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                    <Button Content="Войти" Width="100" Margin="0,0,10,0" IsDefault="True" Click="Login_Click"/>
+                    <Button Content="Выход из программы" Width="150" IsCancel="True" Click="Exit_Click"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Регистрация (арендатор)">
+            <Grid Margin="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Создаётся учётная запись арендатора и карточка в системе." TextWrapping="Wrap" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="1" Text="Название (организация или ФИО)"/>
+                <TextBox x:Name="RegTenantNameBox" Grid.Row="2" Margin="0,4,0,8"/>
+
+                <TextBlock Grid.Row="3" Text="Логин"/>
+                <TextBox x:Name="RegUsernameBox" Grid.Row="4" Margin="0,4,0,8"/>
+
+                <TextBlock Grid.Row="5" Text="Пароль"/>
+                <PasswordBox x:Name="RegPasswordBox" Grid.Row="6" Margin="0,4,0,8" Height="28"/>
+
+                <TextBlock Grid.Row="7" Text="Повтор пароля"/>
+                <PasswordBox x:Name="RegConfirmPasswordBox" Grid.Row="8" Margin="0,4,0,0" Height="28"/>
+
+                <StackPanel Grid.Row="10" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                    <Button Content="Зарегистрироваться" Width="160" Click="Register_Click"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
